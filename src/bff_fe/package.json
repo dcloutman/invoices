@@ -6,13 +6,19 @@
   "scripts": {
     "test": "echo \\\"No test suite available.\\\";exit",
     "build": "webpack --config webpack.config.js",
-    "build-dev": "webpack --config webpack-development.config.js"
+    "build-dev": "webpack --config webpack-development.config.js",
+    "webpack-help": "webpack --help"
   },
   "author": "David Cloutman",
   "license": "(c)2020 David Cloutman",
   "dependencies": {
-    "babel": "7.10.0",
+    "@types/lodash": "^4.14.157",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5"
   }
 }
