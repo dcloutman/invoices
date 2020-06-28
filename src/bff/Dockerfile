@@ -10,5 +10,5 @@ RUN apt-get install bash &\
 
 COPY . /usr/src/app
 
-#ENTRYPOINT ["run.sh"]
-ENTRYPOINT python3 /usr/src/app/app.py --host=0.0.0.0
+ENTRYPOINT ./run-bff.sh
+#ENTRYPOINT python3 /usr/src/app/app.py --host=0.0.0.0

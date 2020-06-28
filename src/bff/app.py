@@ -6,19 +6,21 @@ from invoices.models.InvoiceItem import InvoiceItem
 import os
 import logging
 
-# from lib.citadel.diff.views.DiffView import DiffView
-# from lib.citadel.diff.views.JobDataView import JobDataView
-# from lib.citadel.diff.views.GetDiffReportOidView import GetDiffReportOidView
-# from lib.citadel.diff.views.GetDiffReportView import GetDiffReportView
+from invoices.views.IndexView import IndexView
 
-print("Loading invoice app.")
+sys_logger = logging.getLogger()
+
+sys_logger.info("Loading invoice app.")
 
 APP_PATH = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT =  os.path.join(APP_PATH, os.pardir)
 STATIC_ROOT = os.path.join(os.curdir, "static")
+TEMPLATE_ROOT = os.path.join(os.curdir, "templates")
+app = Flask(__name__, template_folder=TEMPLATE_ROOT, static_folder=STATIC_ROOT)
 
-app = Flask(__name__, template_folder=os.path.join(PROJECT_ROOT, "ui/src/jinja2_templates"), static_folder=STATIC_ROOT)
-sys_logger = logging.getLogger()
+
+IndexView.register(app)
+
 
 if not 'FLASK_PORT' in os.environ:
     sys_logger.info("Environment variable 'FLASK_PORT' was not set. Setting default value of 5000.")
