@@ -6,10 +6,13 @@
     {% endblock %}
 </head>
 <body>
-<main id="app"></main>
+<main id="page_interface">{% block pageInterface %}{% endblock %}</main>
 <footer>
     &#169; David Cloutman All rights reserved.
 </footer>
-<script language="JavaScript" type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+
+{% block bodyScripts %}
+{% endblock %}
+
 </body>
 </html>

@@ -6,4 +6,4 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+document.getElementById("page_interface").appendChild(component());
