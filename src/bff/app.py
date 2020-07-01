@@ -1,12 +1,12 @@
 from flask import Flask, render_template
-from invoices.models.Invoice import Invoice
-from invoices.models.InvoiceItem import InvoiceItem
 
 
 import os
 import logging
 
 from invoices.views.IndexView import IndexView
+from invoices.views.InvoiceView import InvoiceView
+
 
 sys_logger = logging.getLogger()
 
