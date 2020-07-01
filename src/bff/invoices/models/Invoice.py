@@ -13,19 +13,19 @@ class Invoice:
         pass
 
     def add_item(self, new_item: InvoiceItem) -> None:
-    	self.line_items.append(new_item)
-    	self.compute_total()
+        self.line_items.append(new_item)
+        self.compute_total()
 
     def compute_total(self) -> None:
-    	new_total = 0.0
-    	for item in self.line_items:
-    		new_total = new_total + item.amount
+        new_total = 0.0
+        for item in self.line_items:
+            new_total = new_total + item.amount
 
     def get_num_line_items(self) -> int:
-    	return len(self.line_items)
+        return len(self.line_items)
 
     def get_total_due(self) -> float:
-    	return self.total_due
+        return self.total_due
 
     def get_invoice_number(self) -> str:
         return self.invoice_number

@@ -8,7 +8,7 @@ class InvoiceItem:
     quantity = 0
     description = ''
     unit_price = 0.0
-    amount = 0.0    
+    amount = 0.0
 
     def __init__(self, quantity: int = 0, description: str = '', unit_price: float=0.0) -> None:
         quantity = self.quantity
