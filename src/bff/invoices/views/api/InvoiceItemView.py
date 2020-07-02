@@ -5,4 +5,15 @@ import json
 import requests
 
 class InvoiceItemView ():
-    pass
+    route_prefix = '/api'
+    route_base = '/invoice-item/'
+
+    def after_request(self, name, response):
+        return response
+
+    def index(self, id):
+        if '0001' == id:
+            html = render_template('invoice.jinja')
+            return html, 200
+        else:
+            return "Not found", 404

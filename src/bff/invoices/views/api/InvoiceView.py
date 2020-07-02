@@ -5,8 +5,8 @@ import json
 import requests
 
 class InvoiceView ():
-    route_prefix = '/'
-    route_base = ''
+    route_prefix = '/api'
+    route_base = '/invoice/'
 
     #def before_request(self, name):
     #   pass

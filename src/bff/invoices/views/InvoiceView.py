@@ -6,8 +6,8 @@ from invoices.models.Invoice import Invoice
 from invoices.models.InvoiceItem import InvoiceItem
 
 class InvoiceView (FlaskView):
-    route_prefix = '/invoice'
-    route_base = ''
+    route_prefix = ''
+    route_base = '/invoice/'
 
     #def before_request(self, name):
     #   pass

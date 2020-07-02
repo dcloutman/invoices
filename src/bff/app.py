@@ -1,8 +1,9 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, url_for
 
 import os
 import logging
+
+
 
 from invoices.views.IndexView import IndexView
 from invoices.views.InvoiceView import InvoiceView
@@ -20,7 +21,7 @@ app = Flask(__name__, template_folder=TEMPLATE_ROOT, static_folder=STATIC_ROOT)
 
 
 IndexView.register(app)
-
+InvoiceView.register(app)
 
 if not 'FLASK_PORT' in os.environ:
     sys_logger.info("Environment variable 'FLASK_PORT' was not set. Setting default value of 5000.")

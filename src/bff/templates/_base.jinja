@@ -6,10 +6,16 @@
     {% endblock %}
 </head>
 <body>
-<main id="page_interface">{% block pageInterface %}{% endblock %}</main>
-<footer>
-    &#169; David Cloutman All rights reserved.
-</footer>
+
+<div id="outer_container">
+    <header id="page_header">
+        {% block pageHeader %}{% endblock %}
+    </header>
+    <main id="page_interface">{% block pageInterface %}{% endblock %}</main>
+    <footer>
+        &#169; David Cloutman All rights reserved.
+    </footer>
+</div>
 
 {% block bodyScripts %}
 {% endblock %}
