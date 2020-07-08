@@ -2,7 +2,13 @@
 
 {% block docTitle %}Paymetron{% endblock %}
 
-{% block pageInterface %}{% endblock %}
+{% block pageInterface %}
+
+    <div id="clock_container"></div>
+    
+    <table id="invoice_item_container">
+    </table>
+{% endblock %}
 
 {% block bodyScripts %}
     {{ super() }}

@@ -1,8 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Clock } from './invoice-components.tsx';
+import { Clock, InvoiceItem } from './invoice-components.tsx';
 
-ReactDOM.render(<Clock />, document.getElementById("page_interface"));
+ReactDOM.render(<Clock />, document.getElementById("clock_container"));
+
+//const test_item = ();
+//test_item.setState();
+
+ReactDOM.render(<InvoiceItem quantity={2} description="Fool's Gold" unitPrice={0.50} />, document.getElementById("invoice_item_container"));
 
 /* 
 import * as _ from 'lodash';
