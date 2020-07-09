@@ -42,31 +42,41 @@ export class InvoiceItem extends React.Component<InvoiceItemProps, InvoiceItemSt
 
 
 
-
-type ClockState = {
-    time: Date
+type InvoiceItemsContainerState = {
+    item_count: number
 }
 
-export class Clock extends React.Component<{}, ClockState> {
+type InvoiceItemsContainerProps = {
+}
 
-    // Sets the current time with a date object. 
-    tick() {
+export class InvoiceItemsContainer extends React.Component<InvoiceItemsContainerProps, InvoiceItemsContainerState> {
+    componentWillMount () {
         this.setState({
-            time: new Date()
+            item_count: 0
         });
     }
 
-    // Before the component mounts, initialise the clock's state
-    componentWillMount() {
-        this.tick();
-    } 
-
-    // After the component has mounted, reset the state every second.
-    componentDidMount() {
-        setInterval(() => this.tick(), 1000);
-    }
 
     render() {
-        return (<p>{this.state.time.toLocaleTimeString()}</p>)
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>Unit Price</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="invoice_items">
+                    { this.props.children }
+                </tbody>
+            </table>
+        );
+    }
+
+    addItem(item: InvoiceItem) {
+
     }
 }
+
